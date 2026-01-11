@@ -6,6 +6,20 @@ import contactService from "../../services/contact.service.js";
 const router = express.Router();
 
 /**
+ * GET /ping
+ * retrieves string pong
+ */
+router.get("/ping", async (req, res) => {
+  try {
+    const pong = await contactService.ping();
+    res.status(200).json(successResponse(pong));
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(errorResponse("Failed to get pong"));
+  }
+});
+
+/**
  * GET /list
  * Retrieve a list of contacts.
  */
@@ -44,7 +58,7 @@ router.get("/:id", async (req, res) => {
  * POST /create
  * Create a new contact.
  */
-router.post("/", contactValidation.create, async (req, res) => {
+router.post("/create", contactValidation.create, async (req, res) => {
   const { firstName, lastName, email } = req.body;
 
   try {

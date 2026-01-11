@@ -34,8 +34,8 @@ const NewContact = () => {
         lastName: values.lastName,
         email: values.email,
       });
-
-      toast.success("Contact created successfully");
+      const pong = await axios.get("/api/v1/contact/ping");
+      toast.success("Contact created successfully " + pong.data.data);
       resetForm(); // Reset form after successful creation
     } catch (err) {
       console.error(err);

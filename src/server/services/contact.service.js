@@ -1,3 +1,4 @@
+import { printValue } from "yup";
 import db from "./database.js";
 
 /**
@@ -5,6 +6,16 @@ import db from "./database.js";
  * Provides an abstraction layer between the database and route handlers
  */
 class ContactService {
+
+  /**
+   * adding api test
+   * @returns string saying pong
+   */
+  async ping() {
+    const pong = "pong";
+    return pong;
+  }
+
   /**
    * Retrieves all contacts from the database
    * @returns {Promise<Array>} List of contacts
