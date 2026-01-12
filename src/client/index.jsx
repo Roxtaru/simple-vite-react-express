@@ -15,6 +15,7 @@ import Tasks from "./pages/Tasks";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import NewProject from "./pages/NewProject";
 
 const root = document.getElementById("root");
 if (root !== null) {
@@ -32,6 +33,7 @@ if (root !== null) {
             <Route path="/contact/:id" element={<ContactDetail key="contact-detail" />} key="contact-detail"></Route>
             <Route path="/tasks" element={<Tasks key="tasks" />} />
             <Route path="/projects" element={<Projects key="projects" />} />
+            <Route path="/new-project" element={<NewProject key="new-project" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

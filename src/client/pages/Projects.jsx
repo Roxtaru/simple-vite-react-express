@@ -20,9 +20,12 @@ import {
   Folder as ProjectIcon,
   People as PeopleIcon,
   Assignment as TaskIcon,
+  CallToAction,
 } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import AppLoading from '../components/AppLoading';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -100,12 +103,11 @@ const Projects = () => {
           Projects
         </Typography>
         <Button
-          variant="contained"
-          startIcon={<AddIcon />}
-          onClick={() => {
-            // Navigate to new project form
-            toast.info('New project form - to be implemented');
-          }}
+          //Button to go to new project page still working on it.
+          variant="contained" color="primary" component={Link} to="/new-project"
+          //onClick={() => {
+          //toast.info('New project form - to be implemented');
+          //}}
           sx={{
             fontWeight: 600,
             textTransform: 'none',
